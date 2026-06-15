@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ip84nlru45tg"]
+
+[ext_resource type="Texture2D" uid="uid://bqt138qg6ipxk" path="res://assets/Units/Red Units/Archer/Arrow.png" id="1_do0p5"]
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_tmnh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p88kh"]
+size = Vector2(43, 12)
+
+[sub_resource type="Gradient" id="Gradient_ofqso"]
+
+[node name="Arrow" type="Area2D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_tmnh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_do0p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_p88kh")
+
+[node name="Trail" type="Line2D" parent="."]
+width = 3.0
+gradient = SubResource("Gradient_ofqso")
+begin_cap_mode = 2
+end_cap_mode = 2
